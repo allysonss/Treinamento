@@ -8,7 +8,6 @@ public class Table extends SortableTable {
 	
 	public Table() {
 		
-		table = new SortableTable(new TableModel());
 		
 	}
 }
