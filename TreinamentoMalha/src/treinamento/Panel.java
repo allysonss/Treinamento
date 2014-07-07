@@ -26,8 +26,11 @@ public class Panel extends JPanel {
 	private JComboBox<String> grupCB;
 	private JTextField loteTF;
 	private JTextField validTF;
-
 	private JButton novoButton;
+
+	private Table table;
+	private JButton cadastrarButton;
+	private JButton cancelarButton;
 
 	public Panel() {
 		mainPanel = new JPanel(null);
@@ -70,17 +73,27 @@ public class Panel extends JPanel {
 		validTF.setSize(200, 20);
 
 		novoButton = new JButton("Novo");
-		novoButton.setBounds(700, 130, 0, 0);
-		novoButton.setSize(70, 20);
+		novoButton.setBounds(650, 130, 0, 0);
+		novoButton.setSize(115, 25);
+
+		table = new Table();
+		table.setBounds(10, 10, 0, 0);
+		table.setSize(780, 200);
+
+		cadastrarButton = new JButton("Cadastrar");
+		cadastrarButton.setBounds(520, 225, 0, 0);
+		cadastrarButton.setSize(115, 25);
 		
+		cancelarButton = new JButton("Cancelar");
+		cancelarButton.setBounds(52, 30, 0, 0);
+		cancelarButton.setSize(115, 25);
 	}
 
 	private void initializeTopPanel() {
 		topPanel = new JPanel(null);
 		topPanel.setBorder(BorderFactory.createTitledBorder("Criar Nova Rota"));
 		topPanel.setSize(800, 180);
-		Component[] arrayComp = { localLabel, localCB, grupLabel, grupCB,
-				loteLabel, loteTF, validLabel, validTF, novoButton };
+		Component[] arrayComp = { localLabel, localCB, grupLabel, grupCB, loteLabel, loteTF, validLabel, validTF, novoButton };
 
 		for (int i = 0; i < arrayComp.length; i++) {
 			topPanel.add(arrayComp[i]);
@@ -92,6 +105,9 @@ public class Panel extends JPanel {
 		downPanel = new JPanel(null);
 		downPanel.setBounds(0, 180, 0, 0);
 		downPanel.setSize(800, 260);
+		downPanel.add(table);
+		downPanel.add(cadastrarButton);
+		downPanel.add(cancelarButton);
 		mainPanel.add(downPanel);
 	}
 
