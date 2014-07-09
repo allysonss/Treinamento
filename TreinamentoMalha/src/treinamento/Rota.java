@@ -50,7 +50,4 @@ public class Rota {
 			this.validade = validade;
 		}
 	}
-	
-	
-	
 }

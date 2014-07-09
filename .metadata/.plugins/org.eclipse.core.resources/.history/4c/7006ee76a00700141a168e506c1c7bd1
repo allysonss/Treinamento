@@ -1,0 +1,11 @@
+package treinamento;
+
+import tecgraf.javautils.gui.table.SortableTable;
+
+public class Table extends SortableTable {
+	
+	public Table() {
+		
+		
+	}
+}

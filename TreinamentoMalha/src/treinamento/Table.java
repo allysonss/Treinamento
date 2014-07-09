@@ -1,16 +1,17 @@
 package treinamento;
 
+import java.awt.Dimension;
+
 import tecgraf.javautils.gui.table.SortableTable;
 
 public class Table extends SortableTable {
 
 	private static final long serialVersionUID = 1L;
-	private TableModel tableModel;
-	private SortableTable table;
-
+	
 	public Table() {
-		tableModel = new TableModel();
-		table = new SortableTable(tableModel);
-		table.setVisible(true);
+		this.setModel(new TableModel());
+		this.setFillsViewportHeight(true);
+		this.setPreferredScrollableViewportSize(new Dimension(500, 50));
+		this.getTableHeader().setReorderingAllowed(false);
 	}
-}
+} 

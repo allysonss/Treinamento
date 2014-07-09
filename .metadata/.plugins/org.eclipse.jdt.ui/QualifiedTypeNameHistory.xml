@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="javax.print.attribute.standard.JobStateReasons"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+<fullyQualifiedTypeName name="treinamento.Rota"/>
+<fullyQualifiedTypeName name="treinamento.TableModel"/>
+<fullyQualifiedTypeName name="javax.swing.JTable"/>
+<fullyQualifiedTypeName name="treinamento.Table"/>
+<fullyQualifiedTypeName name="tecgraf.javautils.gui.table.SortableTable"/>
+</qualifiedTypeNameHistroy>

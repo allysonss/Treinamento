@@ -1,0 +1,13 @@
+package treinamento;
+
+import tecgraf.javautils.gui.table.SortableTable;
+
+public class Table extends SortableTable {
+
+	private static final long serialVersionUID = 1L;
+	
+	public Table() {
+		this.setModel(new TableModel());
+		System.out.println(table.);
+	}
+} 

@@ -1,0 +1,65 @@
+package treinamento;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.table.AbstractTableModel;
+
+public class TableModel extends AbstractTableModel {
+
+	private static final long serialVersionUID = 1L;
+
+	private List<Rota> dataList;
+	private String[] columns = { "ID", "Local", "Grupamento", "Lote Mínimo", "Validade" };
+
+	public TableModel() {
+		dataList = new ArrayList<Rota>();
+	}
+
+	public void addRow(Rota rota) {
+		dataList.add(rota);
+		this.fireTableDataChanged();
+	}
+	
+	private void populateTable() {
+		Rota rota1 = new Rota("Exterior - TA MUCURIPE", "GLP Energ (1) mil t", "10.5", "10/10/2010");
+		
+	}
+	
+	public String getColumnName(int column) {
+		return columns[column];
+	}
+
+	@Override
+	public int getRowCount() {
+		return dataList.size();
+	}
+
+	@Override
+	public int getColumnCount() {
+		return columns.length;
+	}
+	
+	@Override
+	public Object getValueAt(int rowIndex, int columnIndex) {
+		Rota rota = dataList.get(rowIndex);
+		switch (columnIndex) {
+		case 0:
+			return Integer.toString(rowIndex + 1);
+		case 1:
+			return rota.getLocal();
+		case 2:
+			return rota.getGrupamento();
+		case 3:
+			return rota.getLoteMin();
+		case 4:
+			return rota.getValidade();
+		}
+		return null;
+	}
+
+	public Class<?> getColumnClass(int columnIndex) {
+		return getValueAt(0, columnIndex).getClass();
+	}
+	
+}

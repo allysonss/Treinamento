@@ -1,0 +1,18 @@
+package treinamento;
+
+import javax.swing.JScrollPane;
+import tecgraf.javautils.gui.table.SortableTable;
+
+public class Table extends SortableTable {
+
+	private SortableTable table;
+	private JScrollPane spTable;
+
+	public Table(TableModel tModel) {
+		
+	}
+	
+	private void initializeTable() {
+		
+	}
+}

@@ -1,0 +1,18 @@
+package treinamento;
+
+import tecgraf.javautils.gui.table.SortableTable;
+
+public class Table extends SortableTable {
+
+	private static final long serialVersionUID = 1L;
+	
+	private SortableTable table;
+
+	public Table() {
+		table = new SortableTable(new TableModel());
+		System.out.println(table.getRowCount() + ": Número de linhas da tabela");
+		System.out.println(table.getColumnCount() + ": Número de colunas da tabela");
+		System.out.println(table.getValueAt(0, 0));
+		
+	}
+} 

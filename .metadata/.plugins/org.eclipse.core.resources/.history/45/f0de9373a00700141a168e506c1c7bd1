@@ -1,0 +1,8 @@
+package treinamento;
+
+public class Table {
+	
+	public Table() {
+		
+	}
+}
