@@ -1,6 +1,5 @@
 package treinamento;
 
-import java.awt.Color;
 import java.awt.Dimension;
 
 import tecgraf.javautils.gui.table.SortableTable;
@@ -14,9 +13,8 @@ public class Table extends SortableTable {
 		this.setFillsViewportHeight(true);
 		this.setPreferredScrollableViewportSize(new Dimension(500, 50));
 		this.getTableHeader().setReorderingAllowed(false);
-		this.getTableHeader().setBackground(Color.lightGray);
 		this.setRowHeight(59);
-		this.setIntercellSpacing(new Dimension(10, 0));
+		this.setRowMargin(55);
 	}
 	
 } 

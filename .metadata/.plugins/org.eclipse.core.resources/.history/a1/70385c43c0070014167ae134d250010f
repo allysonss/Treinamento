@@ -101,7 +101,7 @@ public class Panel extends JPanel {
 		for (int i = 0; i < arrayComp.length; i++) {
 			topPanel.add(arrayComp[i]);
 		}
-		mainPanel.add(topPanel);
+		this.add(topPanel);
 	}
 
 	private void initializeDownPanel() {

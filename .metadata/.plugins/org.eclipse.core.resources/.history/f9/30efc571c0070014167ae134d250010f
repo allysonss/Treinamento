@@ -14,7 +14,6 @@ public class Panel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	private JPanel mainPanel;
 	private JPanel topPanel;
 	private JPanel downPanel;
 
@@ -35,7 +34,6 @@ public class Panel extends JPanel {
 	private JButton cancelarButton;
 
 	public Panel() {
-		mainPanel = new JPanel(null);
 		configuringComponents();
 		initializeTopPanel();
 		initializeDownPanel();
@@ -101,7 +99,7 @@ public class Panel extends JPanel {
 		for (int i = 0; i < arrayComp.length; i++) {
 			topPanel.add(arrayComp[i]);
 		}
-		mainPanel.add(topPanel);
+		this.add(topPanel);
 	}
 
 	private void initializeDownPanel() {
@@ -111,11 +109,7 @@ public class Panel extends JPanel {
 		downPanel.add(scrollPane);
 		downPanel.add(cadastrarButton);
 		downPanel.add(cancelarButton);
-		mainPanel.add(downPanel);
-	}
-
-	public JPanel getMainPanel() {
-		return mainPanel;
+		this.add(downPanel);
 	}
 	
 }
