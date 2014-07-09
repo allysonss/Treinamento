@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class Panel extends JPanel {
@@ -29,6 +30,7 @@ public class Panel extends JPanel {
 	private JButton novoButton;
 
 	private Table table;
+	private JScrollPane spTable;
 	private JButton cadastrarButton;
 	private JButton cancelarButton;
 
@@ -48,7 +50,7 @@ public class Panel extends JPanel {
 		grupLabel.setBounds(10, -20, 0, 0);
 		grupLabel.setSize(200, 200);
 
-		loteLabel = new JLabel("Lote MÃ­nimo:");
+		loteLabel = new JLabel("Lote Mínimo:");
 		loteLabel.setBounds(10, 10, 0, 0);
 		loteLabel.setSize(200, 200);
 
@@ -75,17 +77,18 @@ public class Panel extends JPanel {
 		novoButton = new JButton("Novo");
 		novoButton.setBounds(650, 130, 0, 0);
 		novoButton.setSize(115, 25);
-
+		
 		table = new Table();
-		table.setBounds(10, 10, 0, 0);
-		table.setSize(780, 200);
+		spTable = new JScrollPane(table);
+		spTable.setBounds(10, 10, 0, 0);
+		spTable.setSize(785, 200);
 
 		cadastrarButton = new JButton("Cadastrar");
-		cadastrarButton.setBounds(520, 225, 0, 0);
+		cadastrarButton.setBounds(550, 225, 0, 0);
 		cadastrarButton.setSize(115, 25);
 		
 		cancelarButton = new JButton("Cancelar");
-		cancelarButton.setBounds(52, 30, 0, 0);
+		cancelarButton.setBounds(680, 225, 0, 0);
 		cancelarButton.setSize(115, 25);
 	}
 
@@ -105,7 +108,7 @@ public class Panel extends JPanel {
 		downPanel = new JPanel(null);
 		downPanel.setBounds(0, 180, 0, 0);
 		downPanel.setSize(800, 260);
-		downPanel.add(table);
+		downPanel.add(spTable);
 		downPanel.add(cadastrarButton);
 		downPanel.add(cancelarButton);
 		mainPanel.add(downPanel);

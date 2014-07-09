@@ -1,35 +1,43 @@
 package treinamento;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
 public class TableModel extends AbstractTableModel {
 
-	private ArrayList<Rota> dataList;
-	private String[] columns;
-	
+	private static final long serialVersionUID = 1L;
+
+	private List<Rota> dataList;
+	private String[] columns = { "ID", "Local", "Grupamento", "Lote Mínimo", "Validade" };
+
 	public TableModel() {
-		this.dataList = new ArrayList<Rota>();
-		setColumns(createColumns());
+		dataList = new ArrayList<Rota>();
+		populateInitialTable();
 	}
 
-	public TableModel(ArrayList<Rota> dataList) {
-		this.dataList = dataList;
-		setColumns(createColumns());
+	public void addRow(Rota rota) {
+		dataList.add(rota);
+		this.fireTableDataChanged();
 	}
-
-	private void setColumns(String[] columns) {
-		this.columns = columns;
+	
+	private void populateInitialTable() {
+		Rota rota1 = new Rota("Exterior - TA MUCURIPE", "GLP Energ (1) mil t", "10.5", "10/10/2010");
+		Rota rota2 = new Rota("Exterior - TA SANTOS", "GLP (99) mil t", "11.5", "10/10/2020");
+		Rota rota3 = new Rota("Exterior - TA CABEDELO", "DIESEL (50) mil m³", "20", "10/10/2030");
+		addRow(rota1);
+		addRow(rota2);
+		addRow(rota3);
 	}
-
-	private String[] createColumns() {
-		String[] columns = { "ID", "Local", "Grupamento", "Lote MÃ­nimo", "Validade" };
-		return columns;
-	}
-
+	
 	public String getColumnName(int column) {
 		return columns[column];
+	}
+
+	@Override
+	public int getRowCount() {
+		return dataList.size();
 	}
 
 	@Override
@@ -38,17 +46,11 @@ public class TableModel extends AbstractTableModel {
 	}
 	
 	@Override
-	public int getRowCount() {
-		return dataList.size();
-	}
-
-	@Override
-	public String getValueAt(int rowIndex, int columnIndex) {
-		// TODO
+	public Object getValueAt(int rowIndex, int columnIndex) {
 		Rota rota = dataList.get(rowIndex);
 		switch (columnIndex) {
 		case 0:
-			return Integer.toString(rowIndex);
+			return Integer.toString(rowIndex + 1);
 		case 1:
 			return rota.getLocal();
 		case 2:
@@ -57,26 +59,19 @@ public class TableModel extends AbstractTableModel {
 			return rota.getLoteMin();
 		case 4:
 			return rota.getValidade();
-		default:
-			return null;
 		}
-	}
-	
-	public Class<?> getColumnClass(int columnIndex) {
-		switch (columnIndex) {
-		case 0:
-			return String.class;
-		case 1:
-			return String.class;
-		case 2:
-			return String.class;
-		case 3:
-			return String.class;
-		case 4:
-			return String.class;
-		default:
-			return null;
-		}
+		return null;
 	}
 
+	public Class<?> getColumnClass(int columnIndex) {
+		return getValueAt(0, columnIndex).getClass();
+	}
+	
+	public static void main(String[] args) {
+		
+		TableModel tableModel = new TableModel();
+		System.out.println(tableModel.getColumnName(4));
+		
+	}
+	
 }

@@ -13,9 +13,9 @@ public class Frame extends JFrame {
 	}
 
 	private void initializeFrame() {
-		mainFrame = new JFrame("Cadastro de Rotas de ImportaÃ§Ã£o FictÃ­cias");
+		mainFrame = new JFrame("Cadastro de Rotas de Importação Fictícias");
 		mainFrame.add(new Panel().getMainPanel());
-		mainFrame.setSize(800, 450);
+		mainFrame.setSize(825, 480);
 		mainFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		mainFrame.setLocationRelativeTo(null);
 		mainFrame.setVisible(true);
